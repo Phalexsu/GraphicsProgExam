@@ -1,0 +1,5 @@
+add_library(Rendering VertexBuffer.cpp IndexBuffer.cpp VertexArray.cpp ShaderDataTypes.h RenderCommands.h Shader.cpp PerspectiveCamera.h TextureManager.cpp)
+add_library(Engine::Rendering ALIAS Rendering)
+target_include_directories(Rendering PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_compile_features(Rendering PUBLIC cxx_std_17)
+target_link_libraries(Rendering PUBLIC glad glfw TCLAP glm stb)
